@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FlightGearApp</string>
+    <string name="Connect">Connect</string>
+    <string name="ConnectButtonContent">button to connect</string>
+    <string name="EnterIp">Enter IP</string>
+    <string name="EnterPort">Enter Port</string>
+</resources>

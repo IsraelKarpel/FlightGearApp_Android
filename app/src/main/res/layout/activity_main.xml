@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.flightgearapp.view_model.MainViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <com.example.flightgearapp.views.Joystick
+            android:id="@+id/Joystick"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <EditText
+            android:id="@+id/IP"
+            android:layout_width="262dp"
+            android:layout_height="38dp"
+            android:background="#4CAF50"
+            android:hint="@string/EnterIp"
+            android:inputType="text"
+            android:text="@={viewmodel.ip}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.422"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.049"
+            android:autofillHints="">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/PORT"
+            android:layout_width="262dp"
+            android:layout_height="38dp"
+            android:background="#4CAF50"
+            android:hint="@string/EnterPort"
+            android:inputType="text"
+            android:text="@={viewmodel.port}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.422"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.115"
+            android:autofillHints="">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/connect_button"
+            android:layout_width="261dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="86dp"
+            android:background="#2196F3"
+            android:contentDescription="@string/ConnectButtonContent"
+            android:onClick="@{() -> viewmodel.onChangeConnect()}"
+            android:text="@string/Connect"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/PORT" />
+
+        <android.widget.SeekBar
+            android:id="@+id/Throttle"
+            android:layout_width="380dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="350dp"
+            android:layout_marginEnd="175dp"
+            android:max="100"
+            android:rotation="270"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.widget.SeekBar
+            android:id="@+id/Rudder"
+            android:layout_width="300dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="548dp"
+            android:layout_marginEnd="40dp"
+            android:max="200"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
